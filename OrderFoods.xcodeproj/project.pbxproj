@@ -206,6 +206,24 @@
 			path = music;
 			sourceTree = "<group>";
 		};
+		18B8A6E12B04AD6800A719A7 /* demo */ = {
+			isa = PBXGroup;
+			children = (
+				18FF72C32B036B6900657008 /* HttpOrgPost.swift */,
+				18FF72C12B03554E00657008 /* Resource.swift */,
+				18FF72752B03476300657008 /* Music.swift */,
+			);
+			path = demo;
+			sourceTree = "<group>";
+		};
+		18B8A6E22B04AD8400A719A7 /* demo */ = {
+			isa = PBXGroup;
+			children = (
+				18FF72982B0348F400657008 /* MusicViewCell.swift */,
+			);
+			path = demo;
+			sourceTree = "<group>";
+		};
 		18C25A292B031AE5002197D2 /* tabbar */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,9 +282,7 @@
 		18FF72742B03474D00657008 /* models */ = {
 			isa = PBXGroup;
 			children = (
-				18FF72C12B03554E00657008 /* Resource.swift */,
-				18FF72752B03476300657008 /* Music.swift */,
-				18FF72C32B036B6900657008 /* HttpOrgPost.swift */,
+				18B8A6E12B04AD6800A719A7 /* demo */,
 				18B8A6D72B049BFD00A719A7 /* WhpHome.swift */,
 			);
 			path = models;
@@ -294,8 +310,8 @@
 		18FF72972B0348E300657008 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				18B8A6E22B04AD8400A719A7 /* demo */,
 				18FF729A2B03491D00657008 /* CollectionViewCellContentView.swift */,
-				18FF72982B0348F400657008 /* MusicViewCell.swift */,
 				18B8A6DD2B04A3BB00A719A7 /* IndexBrandViewCell.swift */,
 			);
 			path = views;
