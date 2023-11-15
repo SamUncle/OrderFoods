@@ -19,16 +19,13 @@
 		18B8A6D32B0463CE00A719A7 /* AlamofireRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B8A6D22B0463CE00A719A7 /* AlamofireRequest.swift */; };
 		18B8A6D62B04642C00A719A7 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B8A6D52B04642C00A719A7 /* Config.swift */; };
 		18B8A6D82B049BFD00A719A7 /* WhpHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B8A6D72B049BFD00A719A7 /* WhpHome.swift */; };
+		18B8A6DA2B049FA000A719A7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B8A6D92B049FA000A719A7 /* HomeViewModel.swift */; };
+		18B8A6DC2B04A1E200A719A7 /* IndexBrandCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B8A6DB2B04A1E200A719A7 /* IndexBrandCellViewModel.swift */; };
+		18B8A6DE2B04A3BB00A719A7 /* IndexBrandViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B8A6DD2B04A3BB00A719A7 /* IndexBrandViewCell.swift */; };
 		18C25A262B03177D002197D2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C25A252B03177D002197D2 /* HomeViewController.swift */; };
 		18C25A282B031815002197D2 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C25A272B031815002197D2 /* MyViewController.swift */; };
 		18FF725F2B03410A00657008 /* SamNetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FF725E2B03410A00657008 /* SamNetWork.swift */; };
-		18FF72682B0341D900657008 /* UserFavoritesList.json in Resources */ = {isa = PBXBuildFile; fileRef = 18FF72612B0341D900657008 /* UserFavoritesList.json */; };
 		18FF72692B0341D900657008 /* UserMusicList.json in Resources */ = {isa = PBXBuildFile; fileRef = 18FF72622B0341D900657008 /* UserMusicList.json */; };
-		18FF726A2B0341D900657008 /* UserVideoList.json in Resources */ = {isa = PBXBuildFile; fileRef = 18FF72632B0341D900657008 /* UserVideoList.json */; };
-		18FF726B2B0341D900657008 /* User.json in Resources */ = {isa = PBXBuildFile; fileRef = 18FF72642B0341D900657008 /* User.json */; };
-		18FF726C2B0341D900657008 /* UserTimeline.json in Resources */ = {isa = PBXBuildFile; fileRef = 18FF72652B0341D900657008 /* UserTimeline.json */; };
-		18FF726D2B0341D900657008 /* Feed1.json in Resources */ = {isa = PBXBuildFile; fileRef = 18FF72662B0341D900657008 /* Feed1.json */; };
-		18FF726E2B0341D900657008 /* UserFavoriteList.json in Resources */ = {isa = PBXBuildFile; fileRef = 18FF72672B0341D900657008 /* UserFavoriteList.json */; };
 		18FF72722B03470B00657008 /* MusicCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FF72702B03470B00657008 /* MusicCellViewModel.swift */; };
 		18FF72732B03470B00657008 /* MusicListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FF72712B03470B00657008 /* MusicListViewModel.swift */; };
 		18FF72762B03476300657008 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FF72752B03476300657008 /* Music.swift */; };
@@ -77,16 +74,13 @@
 		18B8A6D22B0463CE00A719A7 /* AlamofireRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireRequest.swift; sourceTree = "<group>"; };
 		18B8A6D52B04642C00A719A7 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		18B8A6D72B049BFD00A719A7 /* WhpHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhpHome.swift; sourceTree = "<group>"; };
+		18B8A6D92B049FA000A719A7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		18B8A6DB2B04A1E200A719A7 /* IndexBrandCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexBrandCellViewModel.swift; sourceTree = "<group>"; };
+		18B8A6DD2B04A3BB00A719A7 /* IndexBrandViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexBrandViewCell.swift; sourceTree = "<group>"; };
 		18C25A252B03177D002197D2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		18C25A272B031815002197D2 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		18FF725E2B03410A00657008 /* SamNetWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamNetWork.swift; sourceTree = "<group>"; };
-		18FF72612B0341D900657008 /* UserFavoritesList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserFavoritesList.json; sourceTree = "<group>"; };
 		18FF72622B0341D900657008 /* UserMusicList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserMusicList.json; sourceTree = "<group>"; };
-		18FF72632B0341D900657008 /* UserVideoList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserVideoList.json; sourceTree = "<group>"; };
-		18FF72642B0341D900657008 /* User.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = User.json; sourceTree = "<group>"; };
-		18FF72652B0341D900657008 /* UserTimeline.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserTimeline.json; sourceTree = "<group>"; };
-		18FF72662B0341D900657008 /* Feed1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Feed1.json; sourceTree = "<group>"; };
-		18FF72672B0341D900657008 /* UserFavoriteList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserFavoriteList.json; sourceTree = "<group>"; };
 		18FF72702B03470B00657008 /* MusicCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicCellViewModel.swift; sourceTree = "<group>"; };
 		18FF72712B03470B00657008 /* MusicListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicListViewModel.swift; sourceTree = "<group>"; };
 		18FF72752B03476300657008 /* Music.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
@@ -159,7 +153,7 @@
 				18FF72772B0347F600657008 /* extensions */,
 				18FF72742B03474D00657008 /* models */,
 				18FF726F2B0346E400657008 /* viewmodel */,
-				18FF72602B0341D900657008 /* Data */,
+				18FF72602B0341D900657008 /* sampleData */,
 				18FF725D2B0340F100657008 /* network */,
 				18C25A2B2B031B10002197D2 /* res */,
 				18C25A2A2B031AF7002197D2 /* main */,
@@ -192,6 +186,24 @@
 				18B8A6D52B04642C00A719A7 /* Config.swift */,
 			);
 			path = config;
+			sourceTree = "<group>";
+		};
+		18B8A6DF2B04AA7A00A719A7 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				18B8A6D92B049FA000A719A7 /* HomeViewModel.swift */,
+				18B8A6DB2B04A1E200A719A7 /* IndexBrandCellViewModel.swift */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		18B8A6E02B04AA8600A719A7 /* music */ = {
+			isa = PBXGroup;
+			children = (
+				18FF72702B03470B00657008 /* MusicCellViewModel.swift */,
+				18FF72712B03470B00657008 /* MusicListViewModel.swift */,
+			);
+			path = music;
 			sourceTree = "<group>";
 		};
 		18C25A292B031AE5002197D2 /* tabbar */ = {
@@ -232,25 +244,19 @@
 			path = network;
 			sourceTree = "<group>";
 		};
-		18FF72602B0341D900657008 /* Data */ = {
+		18FF72602B0341D900657008 /* sampleData */ = {
 			isa = PBXGroup;
 			children = (
-				18FF72612B0341D900657008 /* UserFavoritesList.json */,
 				18FF72622B0341D900657008 /* UserMusicList.json */,
-				18FF72632B0341D900657008 /* UserVideoList.json */,
-				18FF72642B0341D900657008 /* User.json */,
-				18FF72652B0341D900657008 /* UserTimeline.json */,
-				18FF72662B0341D900657008 /* Feed1.json */,
-				18FF72672B0341D900657008 /* UserFavoriteList.json */,
 			);
-			path = Data;
+			path = sampleData;
 			sourceTree = "<group>";
 		};
 		18FF726F2B0346E400657008 /* viewmodel */ = {
 			isa = PBXGroup;
 			children = (
-				18FF72702B03470B00657008 /* MusicCellViewModel.swift */,
-				18FF72712B03470B00657008 /* MusicListViewModel.swift */,
+				18B8A6E02B04AA8600A719A7 /* music */,
+				18B8A6DF2B04AA7A00A719A7 /* home */,
 			);
 			path = viewmodel;
 			sourceTree = "<group>";
@@ -290,6 +296,7 @@
 			children = (
 				18FF729A2B03491D00657008 /* CollectionViewCellContentView.swift */,
 				18FF72982B0348F400657008 /* MusicViewCell.swift */,
+				18B8A6DD2B04A3BB00A719A7 /* IndexBrandViewCell.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -417,16 +424,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18FF726A2B0341D900657008 /* UserVideoList.json in Resources */,
-				18FF72682B0341D900657008 /* UserFavoritesList.json in Resources */,
-				18FF726E2B0341D900657008 /* UserFavoriteList.json in Resources */,
 				188D63D72B021BB9006BB39E /* LaunchScreen.storyboard in Resources */,
-				18FF726B2B0341D900657008 /* User.json in Resources */,
 				188D63D42B021BB9006BB39E /* Assets.xcassets in Resources */,
-				18FF726D2B0341D900657008 /* Feed1.json in Resources */,
 				18FF72692B0341D900657008 /* UserMusicList.json in Resources */,
 				188D63D22B021BB6006BB39E /* Main.storyboard in Resources */,
-				18FF726C2B0341D900657008 /* UserTimeline.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +503,7 @@
 				188D63CD2B021BB6006BB39E /* SceneDelegate.swift in Sources */,
 				18B8A6D32B0463CE00A719A7 /* AlamofireRequest.swift in Sources */,
 				18FF729B2B03491D00657008 /* CollectionViewCellContentView.swift in Sources */,
+				18B8A6DC2B04A1E200A719A7 /* IndexBrandCellViewModel.swift in Sources */,
 				18C25A282B031815002197D2 /* MyViewController.swift in Sources */,
 				18FF72722B03470B00657008 /* MusicCellViewModel.swift in Sources */,
 				18FF72732B03470B00657008 /* MusicListViewModel.swift in Sources */,
@@ -509,10 +511,12 @@
 				18FF72C42B036B6900657008 /* HttpOrgPost.swift in Sources */,
 				18FF72962B0348B500657008 /* UIColorExtensions.swift in Sources */,
 				18FF72C22B03554F00657008 /* Resource.swift in Sources */,
+				18B8A6DA2B049FA000A719A7 /* HomeViewModel.swift in Sources */,
 				18B8A6D82B049BFD00A719A7 /* WhpHome.swift in Sources */,
 				18C25A262B03177D002197D2 /* HomeViewController.swift in Sources */,
 				18FF72762B03476300657008 /* Music.swift in Sources */,
 				18FF728B2B0348B500657008 /* UIScrollViewExtensions.swift in Sources */,
+				18B8A6DE2B04A3BB00A719A7 /* IndexBrandViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

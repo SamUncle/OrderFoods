@@ -11,7 +11,7 @@ import RxSwift
 import SnapKit
 import NSObject_Rx
 private let CellId: String = "MusicListCellId"
-
+private let IndexBrandViewCellId:String = "IndexBrandViewCell"
 class HomeViewController: UIViewController,RequestEvent {
     func responseReturn(_ url: String, jsonStr: String) {
         Dlog(jsonStr)
@@ -23,7 +23,7 @@ class HomeViewController: UIViewController,RequestEvent {
     private var bag: DisposeBag = DisposeBag()
     
     private let viewModel = MusicListViewModel()
-    
+    private let homeViewModel = HomeViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor("ffffff")
@@ -31,6 +31,8 @@ class HomeViewController: UIViewController,RequestEvent {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(MusicViewCell.self, forCellReuseIdentifier: CellId)
+        tableView.register(IndexBrandViewCell.self, forCellReuseIdentifier: IndexBrandViewCellId)
+
         tableView.estimatedRowHeight = 95
         view.addSubview(tableView)
         let window = getCurrentWindow()
@@ -55,11 +57,16 @@ class HomeViewController: UIViewController,RequestEvent {
         }
         let login = Login(email: "test@test.test", password: "testPassword")
 //        AlamofireRequest.postParametersUrl(url: BASE_URL + "/post",parameters: login, delegate: self)
-        viewModel.requestData()
-        viewModel.dataSourceDriver.drive(onNext: { [weak self] _ in
+        homeViewModel.requestData()
+        homeViewModel.dataSourceDriver.drive(onNext: { [weak self] _ in
             guard let `self` = self else { return }
             self.tableView.reloadData()
         }).disposed(by: bag)
+//        viewModel.requestData()
+//        viewModel.dataSourceDriver.drive(onNext: { [weak self] _ in
+//            guard let `self` = self else { return }
+//            self.tableView.reloadData()
+//        }).disposed(by: bag)
     }
 }
 
@@ -95,13 +102,23 @@ extension HomeViewController: UITableViewDelegate {
 }
 
 extension HomeViewController: UITableViewDataSource {
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return viewModel.dataSource.count
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: CellId, for: indexPath) as! MusicViewCell
+//        let cellViewModel = viewModel.dataSource[indexPath.row]
+//        cell.bind(viewModel: cellViewModel)
+//        return cell
+//    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.dataSource.count
+        return homeViewModel.dataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CellId, for: indexPath) as! MusicViewCell
-        let cellViewModel = viewModel.dataSource[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: IndexBrandViewCellId, for: indexPath) as! IndexBrandViewCell
+        let cellViewModel = homeViewModel.dataSource[indexPath.row]
         cell.bind(viewModel: cellViewModel)
         return cell
     }
