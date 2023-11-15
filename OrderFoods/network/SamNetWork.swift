@@ -7,7 +7,7 @@
 
 import Foundation
 import Moya
-//正式请求
+//正式请求(不使用sampleData)
 let ApiProvider = MoyaProvider<ApiServiceManager>(plugins: [NetworkLoggerPlugin()])
 //使用sampleData
 let SampleApiProvider =  MoyaProvider<ApiServiceManager>(stubClosure: MoyaProvider.delayedStub(2) ,plugins: [NetworkLoggerPlugin()])
@@ -68,13 +68,9 @@ extension ApiServiceManager: TargetType {
             return "{\"id\": 100, \"first_name\": \"\(firstName)\", \"last_name\": \"\(lastName)\"}".utf8Encoded
         case .whpHost:
             return stubbedResponse("Feed")
-        case .post(let page):
-            print("post请求 \(page)")
+        
+        default:
             return stubbedResponse("UserMusicList")
-        case .music:
-            
-            return stubbedResponse("UserMusicList")
-
         }
     }
     
