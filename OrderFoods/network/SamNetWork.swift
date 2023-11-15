@@ -67,7 +67,7 @@ extension ApiServiceManager: TargetType {
         case .createUser(let firstName, let lastName):
             return "{\"id\": 100, \"first_name\": \"\(firstName)\", \"last_name\": \"\(lastName)\"}".utf8Encoded
         case .whpHost:
-            return stubbedResponse("Feed")
+            return stubbedResponse("UserMusicList")
         
         default:
             return stubbedResponse("UserMusicList")
