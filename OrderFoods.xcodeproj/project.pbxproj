@@ -18,6 +18,7 @@
 		18AD29082B044FA20066DF1D /* NetReqUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AD29072B044FA20066DF1D /* NetReqUtil.swift */; };
 		18B8A6D32B0463CE00A719A7 /* AlamofireRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B8A6D22B0463CE00A719A7 /* AlamofireRequest.swift */; };
 		18B8A6D62B04642C00A719A7 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B8A6D52B04642C00A719A7 /* Config.swift */; };
+		18B8A6D82B049BFD00A719A7 /* WhpHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B8A6D72B049BFD00A719A7 /* WhpHome.swift */; };
 		18C25A262B03177D002197D2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C25A252B03177D002197D2 /* HomeViewController.swift */; };
 		18C25A282B031815002197D2 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C25A272B031815002197D2 /* MyViewController.swift */; };
 		18FF725F2B03410A00657008 /* SamNetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FF725E2B03410A00657008 /* SamNetWork.swift */; };
@@ -75,6 +76,7 @@
 		18AD29072B044FA20066DF1D /* NetReqUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetReqUtil.swift; sourceTree = "<group>"; };
 		18B8A6D22B0463CE00A719A7 /* AlamofireRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireRequest.swift; sourceTree = "<group>"; };
 		18B8A6D52B04642C00A719A7 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		18B8A6D72B049BFD00A719A7 /* WhpHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhpHome.swift; sourceTree = "<group>"; };
 		18C25A252B03177D002197D2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		18C25A272B031815002197D2 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		18FF725E2B03410A00657008 /* SamNetWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamNetWork.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 				18FF72C12B03554E00657008 /* Resource.swift */,
 				18FF72752B03476300657008 /* Music.swift */,
 				18FF72C32B036B6900657008 /* HttpOrgPost.swift */,
+				18B8A6D72B049BFD00A719A7 /* WhpHome.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				18FF72C42B036B6900657008 /* HttpOrgPost.swift in Sources */,
 				18FF72962B0348B500657008 /* UIColorExtensions.swift in Sources */,
 				18FF72C22B03554F00657008 /* Resource.swift in Sources */,
+				18B8A6D82B049BFD00A719A7 /* WhpHome.swift in Sources */,
 				18C25A262B03177D002197D2 /* HomeViewController.swift in Sources */,
 				18FF72762B03476300657008 /* Music.swift in Sources */,
 				18FF728B2B0348B500657008 /* UIScrollViewExtensions.swift in Sources */,

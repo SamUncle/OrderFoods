@@ -21,6 +21,26 @@ class MusicListViewModel {
     }
     
     func requestData(page: Int = 10) {
+        ApiProvider.request(.whpHost) { result in
+            switch result {
+            case let .success(response):
+                do {
+                    let filteredResponse = try response.filterSuccessfulStatusCodes()
+                    let home = try filteredResponse.map(WhpHome.self)
+                    debugPrint(home.categoryMap.channelName)
+                }
+                catch let error {
+                    debugPrint(error)
+                }
+                //自定义解析response 成 json字符串
+//                let data = response.data
+//                let statusCode = response.statusCode
+//                let dataString = String(data: data, encoding: .utf8)
+//                debugPrint("request success : \(statusCode) \(String(describing: dataString))")
+            case let .failure(err):
+                debugPrint("request fail :\(err)")
+            }
+        }
 //        let provider = MoyaProvider<SamApiManager>()
         ApiProvider.request(.createUser(firstName: "James", lastName: "Potter")) { result in
 //            Dlog(result)
@@ -38,9 +58,9 @@ class MusicListViewModel {
 //                let data = response.data
 //                let statusCode = response.statusCode
 //                let dataString = String(data: data, encoding: .utf8)
-//                print("request success : \(statusCode) \(String(describing: dataString))")
+//                debugPrint("request success : \(statusCode) \(String(describing: dataString))")
             case let .failure(err):
-                print("request fail :\(err)")
+                debugPrint("request fail :\(err)")
             }
         }
         //rxswift 解析
@@ -53,14 +73,14 @@ class MusicListViewModel {
 //            }
 //        }
         //rxswift 指定字段解析
-        ApiProvider.rx.request(.createUser(firstName: "Zm", lastName: "Ming")).filterSuccessfulStatusCodes().map(String.self,atKeyPath: "data",failsOnEmptyData: false).subscribe { res in
-            switch res {
-            case .success(let data):
-                debugPrint(data)
-            case .failure(let err):
-                debugPrint(err)
-            }
-        }
+//        ApiProvider.rx.request(.createUser(firstName: "Zm", lastName: "Ming")).filterSuccessfulStatusCodes().map(String.self,atKeyPath: "data",failsOnEmptyData: false).subscribe { res in
+//            switch res {
+//            case .success(let data):
+//                debugPrint(data)
+//            case .failure(let err):
+//                debugPrint(err)
+//            }
+//        }
         
 //        let observable = ApiProvider.rx.request(.music(page: page)).map([Music].self, atKeyPath: "music", using: JSONDecoder(), failsOnEmptyData: false).asObservable()
 //        _ = observable.subscribe(onNext: { [weak self] musics in

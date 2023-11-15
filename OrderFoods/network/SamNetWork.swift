@@ -11,7 +11,7 @@ import Moya
 let ApiProvider = MoyaProvider<SamApiManager>(plugins: [NetworkLoggerPlugin()])
 
 enum SamApiManager {
-    case get
+    case whpHost
     case post(page:Int)
     case music(page: Int)
     case createUser(firstName: String, lastName: String)
@@ -26,13 +26,19 @@ private extension String {
 }
 extension SamApiManager: TargetType {
     var baseURL: URL {
-        return URL(string: "https://httpbin.org")!
+        switch self {
+        case .whpHost:
+            return URL(string: "https://hzx.whirlpool-china.com:7005")!
+        default:
+            return URL(string: "https://httpbin.org")!
+        }
+        
     }
     
     var path: String {
         switch self {
-        case .get:
-            return "/get"
+        case .whpHost:
+            return "/m/new_index.jhtml"
         case .post:
             return "/post"
         case .music:
@@ -44,8 +50,8 @@ extension SamApiManager: TargetType {
     
     var method: Moya.Method {
         switch self {
-        case .get:
-            return .get
+        case .whpHost:
+            return .post
             
         default:
             return .post
@@ -71,8 +77,11 @@ extension SamApiManager: TargetType {
     
     var task: Task {
         switch self {
+        case .whpHost:
+            let whp_para = ["version":"1.0","devid":"惠而浦商城","company_info_id":1,"language":"zh"] as [String : Any]
+            return NetReqUtil.urlRequestParameters(para: whp_para)
             
-        case .post(let page):
+        case let .post(page):
             return .requestParameters(parameters: ["page":page], encoding: JSONEncoding.default)
             
         case let .createUser(firstName, lastName):
@@ -85,7 +94,12 @@ extension SamApiManager: TargetType {
     }
     
     var headers: [String : String]? {
-        return nil
+        switch self {
+        case .whpHost:
+             return ["User-Agent":"android;"]
+        default:
+            return nil
+        }
         //        return ["User-Agent":"ios"]
     }
     

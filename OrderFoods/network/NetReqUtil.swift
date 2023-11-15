@@ -9,6 +9,6 @@ import Foundation
 import Moya
 class NetReqUtil {
     static func urlRequestParameters(para:[String:Any]) -> Task {
-        return .requestParameters(parameters: para, encoding: URLEncoding.default)
+        return .requestParameters(parameters: para, encoding: JSONEncoding.default)
     }
 }
