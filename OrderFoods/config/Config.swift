@@ -6,6 +6,7 @@
 //
 
 import Foundation
+//配置
 let BASE_URL = "https://httpbin.org"
 func Dlog (_ item : Any, _ str: String = " ",file : String = #file, lineNum : Int = #line){
    #if DEBUG
