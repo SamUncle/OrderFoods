@@ -7,10 +7,11 @@
 
 import Foundation
 import Moya
-
-let ApiProvider = MoyaProvider<SamApiManager>(plugins: [NetworkLoggerPlugin()])
-
-enum SamApiManager {
+//正式请求
+let ApiProvider = MoyaProvider<ApiServiceManager>(plugins: [NetworkLoggerPlugin()])
+//使用sampleData
+let SampleApiProvider =  MoyaProvider<ApiServiceManager>(stubClosure: MoyaProvider.delayedStub(2) ,plugins: [NetworkLoggerPlugin()])
+enum ApiServiceManager {
     case whpHost
     case post(page:Int)
     case music(page: Int)
@@ -24,13 +25,15 @@ private extension String {
 
     var utf8Encoded: Data { Data(self.utf8) }
 }
-extension SamApiManager: TargetType {
+extension ApiServiceManager: TargetType {
     var baseURL: URL {
         switch self {
         case .whpHost:
             return URL(string: "https://hzx.whirlpool-china.com:7005")!
+        case .music:
+            return URL(string: "https://aweme-eagle-hl.snssdk.com")!
         default:
-            return URL(string: "https://httpbin.org")!
+            return URL(string: "https://httpbin.or")!
         }
         
     }
@@ -42,7 +45,7 @@ extension SamApiManager: TargetType {
         case .post:
             return "/post"
         case .music:
-            return "/m/new_index.jhtml"
+            return "/aweme/v1/original/music/list/"
         case .createUser(_, _):
             return "/post"
         }
@@ -59,21 +62,21 @@ extension SamApiManager: TargetType {
         
     }
     
-//    var sampleData: Data {
-//        switch self {
-//        case .createUser(let firstName, let lastName):
-//            return "{\"id\": 100, \"first_name\": \"\(firstName)\", \"last_name\": \"\(lastName)\"}".utf8Encoded
-//        case .get:
-//            return stubbedResponse("Feed")
-//        case .post(let page):
-//            print("post请求 \(page)")
-//            return stubbedResponse("UserMusicList")
-//        case .music(let page):
-//            print("请求参数：\(page)")
-//            return stubbedResponse("UserMusicList")
-//
-//        }
-//    }
+    var sampleData: Data {
+        switch self {
+        case .createUser(let firstName, let lastName):
+            return "{\"id\": 100, \"first_name\": \"\(firstName)\", \"last_name\": \"\(lastName)\"}".utf8Encoded
+        case .whpHost:
+            return stubbedResponse("Feed")
+        case .post(let page):
+            print("post请求 \(page)")
+            return stubbedResponse("UserMusicList")
+        case .music:
+            
+            return stubbedResponse("UserMusicList")
+
+        }
+    }
     
     var task: Task {
         switch self {

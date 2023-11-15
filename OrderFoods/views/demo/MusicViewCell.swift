@@ -20,7 +20,7 @@ class MusicViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none
-        contentView.backgroundColor = UIColor.red
+        contentView.backgroundColor = UIColor.brown
         setUpUI()
     }
     

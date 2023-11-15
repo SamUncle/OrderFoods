@@ -9,9 +9,10 @@ import UIKit
 import RxCocoa
 import RxSwift
 import Kingfisher
+import SnapKit
 class IndexBrandViewCell: UITableViewCell {
     private var bag: DisposeBag = DisposeBag()
-    private var brandBtn: UIButton!
+    private var brandImageV: UIImageView!
     private var brandName: UILabel!
     private var countLabel: UILabel!
 
@@ -35,60 +36,36 @@ class IndexBrandViewCell: UITableViewCell {
     func bind(viewModel: IndexBrandCellViewModel) {
         viewModel.brandLogo.drive(onNext: { [weak self] url in
             guard let `self` = self, let url = url else { return }
-            self.brandBtn.kf.setBackgroundImage(with: url, for: .normal)
+            self.brandImageV.kf.setImage(with: url)
 
         }).disposed(by: bag)
-        viewModel.brandID.drive(countLabel.rx.text).disposed(by: bag)
+//        viewModel.brandID.drive(countLabel.rx.text).disposed(by: bag)
         viewModel.brandName.drive(brandName.rx.text).disposed(by: bag)
         
     }
     
     private func setUpUI() {
-        brandBtn = UIButton(type: .custom)
-        contentView.addSubview(brandBtn)
-        brandBtn.translatesAutoresizingMaskIntoConstraints = false
-        brandBtn.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20).isActive = true
-        brandBtn.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-        brandBtn.widthAnchor.constraint(equalToConstant: 70).isActive = true
-        brandBtn.heightAnchor.constraint(equalToConstant: 70).isActive = true
-        
-        let icon = UIImageView(image: UIImage(named: "icon_home_original_musicnote16x16"))
-        contentView.addSubview(icon)
-        icon.translatesAutoresizingMaskIntoConstraints = false
-        icon.topAnchor.constraint(equalTo: brandBtn.topAnchor, constant: 8).isActive = true
-        icon.leftAnchor.constraint(equalTo: brandBtn.rightAnchor, constant: 10).isActive = true
-        
+        brandImageV = UIImageView()
+//        brandImageV.backgroundColor = .gray
+        brandImageV.contentMode = .scaleAspectFit
+        contentView.addSubview(brandImageV)
+         
         brandName = UILabel()
         brandName.textColor = UIColor.black
-        brandName.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(brandName)
-        brandName.centerYAnchor.constraint(equalTo: icon.centerYAnchor).isActive = true
-        brandName.leftAnchor.constraint(equalTo: icon.rightAnchor, constant: 4).isActive = true
         
-        countLabel = UILabel()
-        countLabel.textColor = UIColor.gray
-        contentView.addSubview(countLabel)
-        countLabel.translatesAutoresizingMaskIntoConstraints = false
-        countLabel.leftAnchor.constraint(equalTo: icon.leftAnchor).isActive = true
-        countLabel.topAnchor.constraint(equalTo: brandName.bottomAnchor, constant: 15).isActive = true
+        brandImageV.snp.makeConstraints { make in
+            make.width.equalTo(140)
+            make.height.equalTo(70)
+            make.left.equalToSuperview().offset(15)
+        }
+        brandName.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.height.equalTo(70)
+            make.left.equalTo(brandImageV.snp.right).offset(8)
+        }
+      
          
-        
-        let btnStack = UIStackView()
-        btnStack.axis = .horizontal
-        btnStack.spacing = 20
-        contentView.addSubview(btnStack)
-        btnStack.translatesAutoresizingMaskIntoConstraints = false
-        btnStack.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -20).isActive = true
-        btnStack.topAnchor.constraint(equalTo: brandBtn.topAnchor, constant: 5).isActive = true
-        
-        let collectionBtn = UIButton(type: .system)
-        collectionBtn.setImage(UIImage(named: "icon_white_nocollection24x24")?.withRenderingMode(.alwaysOriginal), for: .normal)
-        
-        let detailBtn = UIButton(type: .system)
-        detailBtn.setImage(UIImage(named: "icon_ost_detail24x24")?.withRenderingMode(.alwaysOriginal), for: .normal)
-        
-        btnStack.addArrangedSubview(collectionBtn)
-        btnStack.addArrangedSubview(detailBtn)
         
     }
 

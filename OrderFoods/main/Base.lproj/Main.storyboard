@@ -13,6 +13,12 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="OrderFoods" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ei7-GI-ysA">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <viewLayoutGuide key="safeArea" id="HLA-kI-wcV"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
                     <tabBarItem key="tabBarItem" title="首页" image="index-off" selectedImage="index-on" id="q3l-aK-dGR"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -71,10 +77,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="index-off" width="33.333332061767578" height="33.333332061767578"/>
-        <image name="index-on" width="33.333332061767578" height="33.333332061767578"/>
-        <image name="my-off" width="33.333332061767578" height="33.333332061767578"/>
-        <image name="my-on" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="index-off" width="26.666666030883789" height="26.666666030883789"/>
+        <image name="index-on" width="26.666666030883789" height="26.666666030883789"/>
+        <image name="my-off" width="26.666666030883789" height="26.666666030883789"/>
+        <image name="my-on" width="26.666666030883789" height="26.666666030883789"/>
         <systemColor name="systemCyanColor">
             <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

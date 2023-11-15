@@ -10,90 +10,50 @@ import RxCocoa
 import RxSwift
 import SnapKit
 import NSObject_Rx
-private let CellId: String = "MusicListCellId"
 private let IndexBrandViewCellId:String = "IndexBrandViewCell"
 class HomeViewController: UIViewController,RequestEvent {
+    //自定义网络请求回调实现
     func responseReturn(_ url: String, jsonStr: String) {
         Dlog(jsonStr)
     }
-    
-
     private var tableView: UITableView = UITableView(frame: CGRect.zero, style: .plain)
     fileprivate var didScroll: ((UIScrollView) -> ())?
     private var bag: DisposeBag = DisposeBag()
-    
-    private let viewModel = MusicListViewModel()
     private let homeViewModel = HomeViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor("ffffff")
+//        view.backgroundColor = UIColor("f7f7f7")
+        tableView.backgroundColor = UIColor("f7f7f7")
         tableView.showsVerticalScrollIndicator = false
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(MusicViewCell.self, forCellReuseIdentifier: CellId)
         tableView.register(IndexBrandViewCell.self, forCellReuseIdentifier: IndexBrandViewCellId)
-
         tableView.estimatedRowHeight = 95
-        view.addSubview(tableView)
-        let window = getCurrentWindow()
-        let safeAreaTop = window.safeAreaInsets.top
-        let safeAreaBottom = window.safeAreaInsets.bottom
-        print("Safe Area Top: \(safeAreaTop)")
-        print("Safe Area Bottom: \(safeAreaBottom)")
-        if let tabBarHeight = self.tabBarController?.tabBar.frame.size.height {
-            print("TabBar Height: \(tabBarHeight)")
-            tableView.snp.makeConstraints { make in
-                make.top.equalTo(view).offset(safeAreaTop)
-                make.left.right.equalToSuperview()
-                make.bottom.equalToSuperview().offset(-safeAreaBottom-tabBarHeight)
-            }
-        }
         tableView.separatorStyle = .none
+        view.addSubview(tableView)
+    
+        tableView.snp.makeConstraints { make in
+            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
+            make.left.right.equalToSuperview()
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
+        }
+        
         
         if #available(iOS 11.0, *) {
             tableView.contentInsetAdjustmentBehavior = .never
         } else {
             automaticallyAdjustsScrollViewInsets = false
         }
-        let login = Login(email: "test@test.test", password: "testPassword")
+//        let login = Login(email: "test@test.test", password: "testPassword")
 //        AlamofireRequest.postParametersUrl(url: BASE_URL + "/post",parameters: login, delegate: self)
         homeViewModel.requestData()
         homeViewModel.dataSourceDriver.drive(onNext: { [weak self] _ in
             guard let `self` = self else { return }
             self.tableView.reloadData()
         }).disposed(by: bag)
-//        viewModel.requestData()
-//        viewModel.dataSourceDriver.drive(onNext: { [weak self] _ in
-//            guard let `self` = self else { return }
-//            self.tableView.reloadData()
-//        }).disposed(by: bag)
+         
     }
 }
-
-func getCurrentWindow() -> UIWindow{
-     
-        if #available(iOS 13.0, *) {
-            
-            let array:Set = UIApplication.shared.connectedScenes
-            
-            let windowScene:UIWindowScene = array.first as! UIWindowScene
-            
-            //如果是普通App开发，可以使用
-            
-            //            SceneDelegate * delegate = (SceneDelegate *)windowScene.delegate;
-            
-            //            UIWindow * mainWindow = delegate.window;
-            if let mainWindow:UIWindow = windowScene.value(forKeyPath:"delegate.window")as? UIWindow{
-                return mainWindow
-            }else{
-                return UIApplication.shared.windows.first!
-            }
-        }else{
-            return UIApplication.shared.keyWindow!
-        }
-    
-}
-
  
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -102,20 +62,11 @@ extension HomeViewController: UITableViewDelegate {
 }
 
 extension HomeViewController: UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return viewModel.dataSource.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: CellId, for: indexPath) as! MusicViewCell
-//        let cellViewModel = viewModel.dataSource[indexPath.row]
-//        cell.bind(viewModel: cellViewModel)
-//        return cell
-//    }
+   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return homeViewModel.dataSource.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: IndexBrandViewCellId, for: indexPath) as! IndexBrandViewCell
         let cellViewModel = homeViewModel.dataSource[indexPath.row]
