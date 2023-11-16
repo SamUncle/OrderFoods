@@ -107,14 +107,17 @@ extension TopBrandViewCell: JXBannerDataSource {
     func jxBanner(_ banner: JXBannerType,
                   layoutParams: JXBannerLayoutParams)
     -> JXBannerLayoutParams {
+        let w_h_sacle:CGFloat = 327/136
+        let banner_height = (UIScreen.main.bounds.width) / w_h_sacle + 28
+        
         return layoutParams
-            .layoutType(JXBannerTransformLinear())
-            .itemSize(CGSize(width: 280, height: 190))
+//            .layoutType(JXBannerTransformLinear())
+            .itemSize(CGSize(width: UIScreen.main.bounds.width, height: banner_height))
             .itemSpacing(20)
-            .rateOfChange(0.8)
-            .minimumScale(0.7)
-            .rateHorisonMargin(0.5)
-            .minimumAlpha(0.8)
+//            .rateOfChange(1)
+//            .minimumScale(0.7)
+//            .rateHorisonMargin(0.5)
+//            .minimumAlpha(0.8)
         
     }
     
@@ -125,19 +128,19 @@ extension TopBrandViewCell: JXBannerDataSource {
                   coverView: UIView,
                   builder: JXBannerPageControlBuilder) -> JXBannerPageControlBuilder {
         
-        let pageControl = JXPageControlScale()
+        let pageControl = JXPageControlJump()
         pageControl.contentMode = .bottom
         pageControl.activeSize = CGSize(width: 15, height: 6)
         pageControl.inactiveSize = CGSize(width: 6, height: 6)
         pageControl.activeColor = UIColor.red
-        pageControl.inactiveColor = UIColor.systemGray4
+        pageControl.inactiveColor = UIColor.systemGray2
         pageControl.columnSpacing = 0
         pageControl.isAnimation = true
         builder.pageControl = pageControl
         builder.layout = {
             pageControl.snp.makeConstraints { (maker) in
                 maker.left.right.equalTo(coverView)
-                maker.top.equalTo(coverView.snp.bottom).offset(5)
+                maker.top.equalTo(coverView.snp.bottom).offset(-15)
                 maker.height.equalTo(10)
             }
         }
@@ -153,10 +156,14 @@ extension TopBrandViewCell: JXBannerDelegate {
     public func jxBanner(_ banner: JXBannerType,
                          didSelectItemAt index: Int) {
         debugPrint("点击：\(index)")
+        let model = dataSource[index] as TopBannerCellVM
+        model.brandID.drive(onNext: { id in
+            debugPrint(id)
+        }).disposed(by: bag)
     }
     
     // 最中心显示cell 索引
     func jxBanner(_ banner: JXBannerType, center index: Int) {
-        debugPrint(index)
+//        debugPrint(index)
     }
 }

@@ -10,7 +10,7 @@ import Moya
 //正式请求(不使用sampleData)
 let ApiProvider = MoyaProvider<ApiServiceManager>(plugins: [NetworkLoggerPlugin()])
 //使用sampleData
-let SampleApiProvider =  MoyaProvider<ApiServiceManager>(stubClosure: MoyaProvider.delayedStub(2) ,plugins: [NetworkLoggerPlugin()])
+let SampleApiProvider =  MoyaProvider<ApiServiceManager>(stubClosure: MoyaProvider.immediatelyStub ,plugins: [NetworkLoggerPlugin()])
 enum ApiServiceManager {
     case whpHost
     case post(page:Int)
@@ -99,7 +99,6 @@ extension ApiServiceManager: TargetType {
         default:
             return nil
         }
-        //        return ["User-Agent":"ios"]
     }
     
     func stubbedResponse(_ filename: String) -> Data {

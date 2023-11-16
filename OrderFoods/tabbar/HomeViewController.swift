@@ -62,7 +62,7 @@ extension HomeViewController: UITableViewDelegate {
         switch indexPath.row {
         case 0:
             let w_h_sacle:CGFloat = 327/136
-            let banner_height = (UIScreen.main.bounds.width - 69) / w_h_sacle + 28
+            let banner_height = (UIScreen.main.bounds.width) / w_h_sacle + 28
             return banner_height
         case 1:
             return 80

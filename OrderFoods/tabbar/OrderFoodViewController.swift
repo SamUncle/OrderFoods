@@ -139,7 +139,7 @@ extension OrderFoodViewController: JXBannerDataSource {
         builder: JXBannerPageControlBuilder) -> JXBannerPageControlBuilder {
 
             if banner.indentify == "linearBanner" {
-                let pageControl = JXPageControlScale()
+                let pageControl = JXPageControlJump()
                 pageControl.contentMode = .bottom
                 pageControl.activeSize = CGSize(width: 15, height: 6)
                 pageControl.inactiveSize = CGSize(width: 6, height: 6)
