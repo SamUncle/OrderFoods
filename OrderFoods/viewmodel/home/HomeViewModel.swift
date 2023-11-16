@@ -11,6 +11,16 @@ import RxCocoa
 import Moya
 class HomeViewModel {
     let disposeBag = DisposeBag()
+    
+    private var topBannerDataSource: BehaviorRelay<[TopBannerCellVM]> = BehaviorRelay(value: [])
+    
+    public var topBannerDataSourceDriver: Driver<[TopBannerCellVM]> {
+        return topBannerDataSource.asDriver()
+    }
+    public var topBannerDataSourceV: [TopBannerCellVM] {
+        return topBannerDataSource.value
+    }
+    
     private var brandDataSource: BehaviorRelay<[IndexBrandCellViewModel]> = BehaviorRelay(value: [])
     
     public var dataSourceDriver: Driver<[IndexBrandCellViewModel]> {
@@ -43,26 +53,35 @@ class HomeViewModel {
 //        }
  
         //rxswift 解析 全部解析
-//        ApiProvider.rx.request(.whpHost).filterSuccessfulStatusCodes().map(WhpHome.self).subscribe { res in
-//            switch res {
-//            case .success(let http):
-//                debugPrint(http.categoryMap.channelName)
-//            case .failure(let err):
-//                debugPrint(err)
-//            }
-//        }
-        //rxswift 指定字段解析 这里指定品牌数组字段‘index_brand’
-        ApiProvider.rx.request(.whpHost).filterSuccessfulStatusCodes().map([IndexBrand].self,atKeyPath: "index_brand",failsOnEmptyData: false).subscribe { [weak self] brands in
-            switch brands {
-            case .success(let data):
-                
-                self?.brandDataSource.accept(data.map{
+        ApiProvider.rx.request(.whpHost).filterSuccessfulStatusCodes().map(WhpHome.self).subscribe {[weak self] res in
+            switch res {
+            case .success(let http):
+                debugPrint(http.categoryMap.channelName)
+                let brandTopData = http.indexBannerTop
+                self?.topBannerDataSource.accept(brandTopData.map{
+                    TopBannerCellVM(brand: $0)
+                })
+                let brandData = http.indexBrand
+                self?.brandDataSource.accept(brandData.map{
                     IndexBrandCellViewModel(brand: $0)
                 })
-                debugPrint(data)
+                
             case .failure(let err):
                 debugPrint(err)
             }
         }.disposed(by: disposeBag)
+        //rxswift 指定字段解析 这里指定品牌数组字段‘index_brand’
+//        ApiProvider.rx.request(.whpHost).filterSuccessfulStatusCodes().map([IndexBrand].self,atKeyPath: "index_brand",failsOnEmptyData: false).subscribe { [weak self] brands in
+//            switch brands {
+//            case .success(let data):
+//                
+//                self?.brandDataSource.accept(data.map{
+//                    IndexBrandCellViewModel(brand: $0)
+//                })
+//                debugPrint(data)
+//            case .failure(let err):
+//                debugPrint(err)
+//            }
+//        }.disposed(by: disposeBag)
     }
 }

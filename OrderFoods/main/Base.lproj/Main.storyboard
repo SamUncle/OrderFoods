@@ -38,12 +38,43 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="M77-ev-5ol"/>
-                        <segue destination="wDw-Lk-gmL" kind="relationship" relationship="viewControllers" id="40p-F3-bMV"/>
+                        <segue destination="srB-Ko-K3S" kind="relationship" relationship="viewControllers" id="8Ne-9w-OIt"/>
+                        <segue destination="wDw-Lk-gmL" kind="relationship" relationship="viewControllers" id="hqB-ez-Xg5"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jzf-Mt-fI8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-11.450381679389313" y="-27.464788732394368"/>
+        </scene>
+        <!--点餐-->
+        <scene sceneID="osR-fz-BWv">
+            <objects>
+                <viewController id="srB-Ko-K3S" customClass="OrderFoodViewController" customModule="OrderFoods" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2aP-gG-eQe">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R6S-m6-QbB">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1316"/>
+                                <color key="backgroundColor" systemColor="systemBrownColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="c78-YT-i3Z"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="c78-YT-i3Z" firstAttribute="trailing" secondItem="R6S-m6-QbB" secondAttribute="trailing" id="89L-fo-Rdh"/>
+                            <constraint firstItem="R6S-m6-QbB" firstAttribute="leading" secondItem="c78-YT-i3Z" secondAttribute="leading" id="KeE-WT-vJL"/>
+                            <constraint firstItem="c78-YT-i3Z" firstAttribute="bottom" secondItem="R6S-m6-QbB" secondAttribute="bottom" id="TmO-Ck-2Z2"/>
+                            <constraint firstItem="R6S-m6-QbB" firstAttribute="top" secondItem="2aP-gG-eQe" secondAttribute="top" id="pPf-H5-ADZ"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="点餐" image="qc-off" selectedImage="qc-on" id="uzB-N6-NDO">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dVE-7Q-6Nn" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-167" y="698"/>
         </scene>
         <!--我的-->
         <scene sceneID="z1i-Yt-pcR">
@@ -73,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tyT-eG-nyO" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="752" y="718"/>
+            <point key="canvasLocation" x="827" y="554"/>
         </scene>
     </scenes>
     <resources>
@@ -81,6 +112,11 @@
         <image name="index-on" width="26.666666030883789" height="26.666666030883789"/>
         <image name="my-off" width="26.666666030883789" height="26.666666030883789"/>
         <image name="my-on" width="26.666666030883789" height="26.666666030883789"/>
+        <image name="qc-off" width="26.666666030883789" height="26.666666030883789"/>
+        <image name="qc-on" width="26.666666030883789" height="26.666666030883789"/>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemCyanColor">
             <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -24,6 +24,9 @@
 		18B8A6DE2B04A3BB00A719A7 /* IndexBrandViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B8A6DD2B04A3BB00A719A7 /* IndexBrandViewCell.swift */; };
 		18C25A262B03177D002197D2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C25A252B03177D002197D2 /* HomeViewController.swift */; };
 		18C25A282B031815002197D2 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C25A272B031815002197D2 /* MyViewController.swift */; };
+		18CF46E22B05A8B6006470E7 /* OrderFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF46E12B05A8B6006470E7 /* OrderFoodViewController.swift */; };
+		18CF46E42B05B8DF006470E7 /* TopBrandViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF46E32B05B8DF006470E7 /* TopBrandViewCell.swift */; };
+		18CF46E62B05BEEA006470E7 /* TopBannerCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF46E52B05BEEA006470E7 /* TopBannerCellVM.swift */; };
 		18FF725F2B03410A00657008 /* SamNetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FF725E2B03410A00657008 /* SamNetWork.swift */; };
 		18FF72692B0341D900657008 /* UserMusicList.json in Resources */ = {isa = PBXBuildFile; fileRef = 18FF72622B0341D900657008 /* UserMusicList.json */; };
 		18FF72722B03470B00657008 /* MusicCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FF72702B03470B00657008 /* MusicCellViewModel.swift */; };
@@ -79,6 +82,9 @@
 		18B8A6DD2B04A3BB00A719A7 /* IndexBrandViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexBrandViewCell.swift; sourceTree = "<group>"; };
 		18C25A252B03177D002197D2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		18C25A272B031815002197D2 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
+		18CF46E12B05A8B6006470E7 /* OrderFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderFoodViewController.swift; sourceTree = "<group>"; };
+		18CF46E32B05B8DF006470E7 /* TopBrandViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBrandViewCell.swift; sourceTree = "<group>"; };
+		18CF46E52B05BEEA006470E7 /* TopBannerCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBannerCellVM.swift; sourceTree = "<group>"; };
 		18FF725E2B03410A00657008 /* SamNetWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamNetWork.swift; sourceTree = "<group>"; };
 		18FF72622B0341D900657008 /* UserMusicList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserMusicList.json; sourceTree = "<group>"; };
 		18FF72702B03470B00657008 /* MusicCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicCellViewModel.swift; sourceTree = "<group>"; };
@@ -193,6 +199,7 @@
 			children = (
 				18B8A6D92B049FA000A719A7 /* HomeViewModel.swift */,
 				18B8A6DB2B04A1E200A719A7 /* IndexBrandCellViewModel.swift */,
+				18CF46E52B05BEEA006470E7 /* TopBannerCellVM.swift */,
 			);
 			path = home;
 			sourceTree = "<group>";
@@ -229,6 +236,7 @@
 			children = (
 				18C25A252B03177D002197D2 /* HomeViewController.swift */,
 				18C25A272B031815002197D2 /* MyViewController.swift */,
+				18CF46E12B05A8B6006470E7 /* OrderFoodViewController.swift */,
 			);
 			path = tabbar;
 			sourceTree = "<group>";
@@ -313,6 +321,7 @@
 				18B8A6E22B04AD8400A719A7 /* demo */,
 				18FF729A2B03491D00657008 /* CollectionViewCellContentView.swift */,
 				18B8A6DD2B04A3BB00A719A7 /* IndexBrandViewCell.swift */,
+				18CF46E32B05B8DF006470E7 /* TopBrandViewCell.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -513,6 +522,7 @@
 				188D63CB2B021BB6006BB39E /* AppDelegate.swift in Sources */,
 				18FF728E2B0348B500657008 /* UIViewExtensions.swift in Sources */,
 				18FF72992B0348F400657008 /* MusicViewCell.swift in Sources */,
+				18CF46E22B05A8B6006470E7 /* OrderFoodViewController.swift in Sources */,
 				18FF725F2B03410A00657008 /* SamNetWork.swift in Sources */,
 				18B8A6D62B04642C00A719A7 /* Config.swift in Sources */,
 				18FF72792B03481400657008 /* FileManagerExtensions.swift in Sources */,
@@ -525,7 +535,9 @@
 				18FF72732B03470B00657008 /* MusicListViewModel.swift in Sources */,
 				18AD29082B044FA20066DF1D /* NetReqUtil.swift in Sources */,
 				18FF72C42B036B6900657008 /* HttpOrgPost.swift in Sources */,
+				18CF46E62B05BEEA006470E7 /* TopBannerCellVM.swift in Sources */,
 				18FF72962B0348B500657008 /* UIColorExtensions.swift in Sources */,
+				18CF46E42B05B8DF006470E7 /* TopBrandViewCell.swift in Sources */,
 				18FF72C22B03554F00657008 /* Resource.swift in Sources */,
 				18B8A6DA2B049FA000A719A7 /* HomeViewModel.swift in Sources */,
 				18B8A6D82B049BFD00A719A7 /* WhpHome.swift in Sources */,

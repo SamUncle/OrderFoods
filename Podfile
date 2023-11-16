@@ -10,4 +10,5 @@ target 'OrderFoods' do
   pod 'Kingfisher', '~> 7.6.1'
   pod 'SnapKit', '~> 5.6.0'
   pod 'NSObject+Rx'
+  pod 'JXBanner'
 end

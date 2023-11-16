@@ -33,7 +33,7 @@ extension ApiServiceManager: TargetType {
         case .music:
             return URL(string: "https://aweme-eagle-hl.snssdk.com")!
         default:
-            return URL(string: "https://httpbin.or")!
+            return URL(string: "https://httpbin.org")!
         }
         
     }
