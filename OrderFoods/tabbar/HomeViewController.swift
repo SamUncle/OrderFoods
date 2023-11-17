@@ -63,9 +63,9 @@ class HomeViewController: UIViewController,RequestEvent {
         }
         header.lastUpdatedTimeLabel?.isHidden = true
         header.stateLabel?.isHidden = true
-        let image = UIImage.init(systemName: "arrow.down")
+//        let image = UIImage.init(systemName: "arrow.down")
+//        header.arrowView?.image = image
         header.stateLabel?.textColor = .red
-        header.arrowView?.image = image
         header.loadingView?.style = UIActivityIndicatorView.Style.medium
         header.loadingView?.color = .red
         header
