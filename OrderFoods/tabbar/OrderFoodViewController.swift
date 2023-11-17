@@ -15,7 +15,7 @@ class OrderFoodViewController: UIViewController {
     lazy var linearBanner: JXBanner = {[weak self] in
         let banner = JXBanner()
         banner.placeholderImgView.image = UIImage(named: "banner_placeholder")
-        banner.backgroundColor = UIColor.systemGray4
+        banner.backgroundColor = UIColor.groupTableViewBackground
         banner.indentify = "linearBanner"
         banner.delegate = self
         banner.dataSource = self
@@ -25,7 +25,7 @@ class OrderFoodViewController: UIViewController {
     lazy var converflowBanner: JXBanner = {
         let banner = JXBanner()
         banner.placeholderImgView.image = UIImage(named: "banner_placeholder")
-        banner.backgroundColor = UIColor.systemGray4
+        banner.backgroundColor = UIColor.groupTableViewBackground
 //        banner.indentify = "converflowBanner"
         banner.delegate = self
         banner.dataSource = self
@@ -34,18 +34,7 @@ class OrderFoodViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let imageView = UIImageView()
-        let image = UIImage(systemName: "arrow.down")
-        imageView.image = image
-        imageView.tintColor = .red
-        view.addSubview(imageView)
-        imageView.snp.makeConstraints {(maker) in
         
-            maker.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-            maker.left.equalToSuperview()
-            maker.height.equalTo(20)
-            maker.width.equalTo(60)
-        }
 //        view.addSubview(linearBanner)
 //        view.addSubview(converflowBanner)
 //        linearBanner.snp.makeConstraints {(maker) in
@@ -157,7 +146,7 @@ extension OrderFoodViewController: JXBannerDataSource {
                 pageControl.activeSize = CGSize(width: 15, height: 6)
                 pageControl.inactiveSize = CGSize(width: 6, height: 6)
                 pageControl.activeColor = UIColor.red
-                pageControl.inactiveColor = UIColor.systemGray4
+                pageControl.inactiveColor = UIColor.groupTableViewBackground
                 pageControl.columnSpacing = 0
                 pageControl.isAnimation = true
                 builder.pageControl = pageControl
@@ -176,7 +165,7 @@ extension OrderFoodViewController: JXBannerDataSource {
                 pageControl.activeSize = CGSize(width: 15, height: 6)
                 pageControl.inactiveSize = CGSize(width: 6, height: 6)
                 pageControl.activeColor = UIColor.red
-                pageControl.inactiveColor = UIColor.systemGray4
+                pageControl.inactiveColor = UIColor.groupTableViewBackground
                 pageControl.columnSpacing = 0
                 builder.pageControl = pageControl
                 builder.layout = {

@@ -20,7 +20,11 @@ class TopBrandViewCell: UITableViewCell {
     lazy var linearBanner: JXBanner = {[weak self] in
         let banner = JXBanner()
         banner.placeholderImgView.image = UIImage(named: "banner_placeholder")
-        banner.backgroundColor = UIColor.systemGray4
+        if #available(iOS 13.0, *) {
+            banner.backgroundColor = UIColor.systemGray4
+        } else {
+            banner.backgroundColor = UIColor.groupTableViewBackground
+        }
         banner.indentify = "linearBanner"
         banner.delegate = self
         banner.dataSource = self
@@ -133,7 +137,11 @@ extension TopBrandViewCell: JXBannerDataSource {
         pageControl.activeSize = CGSize(width: 15, height: 6)
         pageControl.inactiveSize = CGSize(width: 6, height: 6)
         pageControl.activeColor = UIColor.red
-        pageControl.inactiveColor = UIColor.systemGray2
+        if #available(iOS 13.0, *) {
+            pageControl.inactiveColor = UIColor.systemGray2
+        } else {
+            pageControl.inactiveColor =  UIColor.groupTableViewBackground
+        }
         pageControl.columnSpacing = 0
         pageControl.isAnimation = true
         builder.pageControl = pageControl

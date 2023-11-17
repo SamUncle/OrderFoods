@@ -66,7 +66,11 @@ class HomeViewController: UIViewController,RequestEvent {
 //        let image = UIImage.init(systemName: "arrow.down")
 //        header.arrowView?.image = image
         header.stateLabel?.textColor = .red
-        header.loadingView?.style = UIActivityIndicatorView.Style.medium
+        if #available(iOS 13.0, *) {
+            header.loadingView?.style = UIActivityIndicatorView.Style.medium
+        } else {
+            
+        }
         header.loadingView?.color = .red
         header
             .autoChangeTransparency(true)
