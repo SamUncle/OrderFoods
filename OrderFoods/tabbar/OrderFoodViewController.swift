@@ -34,18 +34,31 @@ class OrderFoodViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(linearBanner)
-        view.addSubview(converflowBanner)
-        linearBanner.snp.makeConstraints {(maker) in
-            maker.left.right.equalTo(view)
-            maker.height.equalTo(200)
-            maker.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(10)
+        let imageView = UIImageView()
+        let image = UIImage(systemName: "arrow.down")
+        imageView.image = image
+        imageView.tintColor = .red
+        view.addSubview(imageView)
+        imageView.snp.makeConstraints {(maker) in
+        
+            maker.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            maker.left.equalToSuperview()
+            maker.height.equalTo(20)
+            maker.width.equalTo(60)
         }
+//        view.addSubview(linearBanner)
+//        view.addSubview(converflowBanner)
+//        linearBanner.snp.makeConstraints {(maker) in
+//            maker.left.right.equalTo(view)
+//            maker.height.equalTo(200)
+//            maker.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(10)
+//        }
+        
 
-        converflowBanner.snp.makeConstraints {(maker) in
-            maker.left.right.height.equalTo(linearBanner)
-            maker.top.equalTo(linearBanner.snp.bottom).offset(100)
-        }
+//        converflowBanner.snp.makeConstraints {(maker) in
+//            maker.left.right.height.equalTo(linearBanner)
+//            maker.top.equalTo(linearBanner.snp.bottom).offset(100)
+//        }
 
         
     }

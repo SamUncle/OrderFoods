@@ -32,6 +32,7 @@ PODS:
   - JXPageControl/Transform (0.1.5):
     - JXPageControl/Common
   - Kingfisher (7.6.2)
+  - MJRefresh (3.7.6)
   - Moya/Core (15.0.0):
     - Alamofire (~> 5.0)
   - Moya/RxSwift (15.0.0):
@@ -50,6 +51,7 @@ PODS:
 DEPENDENCIES:
   - JXBanner
   - Kingfisher (~> 7.6.1)
+  - MJRefresh
   - Moya/RxSwift (~> 15.0)
   - "NSObject+Rx"
   - RxCocoa
@@ -61,6 +63,7 @@ SPEC REPOS:
     - JXBanner
     - JXPageControl
     - Kingfisher
+    - MJRefresh
     - Moya
     - "NSObject+Rx"
     - RxCocoa
@@ -73,6 +76,7 @@ SPEC CHECKSUMS:
   JXBanner: 348dbef856e786494cbf30fb45d6b84826f2d3c5
   JXPageControl: e9487b39e2e58fc17790833214f3b8e935bef98b
   Kingfisher: 6c5449c6450c5239166510ba04afe374a98afc4f
+  MJRefresh: 2fe7fb43a5167ceda20bb7e63f130c04fd1814a5
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   "NSObject+Rx": 61cf1f7306a73dcef8b36649198af0813ec18dfd
   RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
@@ -80,6 +84,6 @@ SPEC CHECKSUMS:
   RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
-PODFILE CHECKSUM: a379efb529080b32acbe53832dce1c15a49a59e1
+PODFILE CHECKSUM: 8b62fac9623967b83dd1ffefbc3f77ddb3dc4bc8
 
 COCOAPODS: 1.11.3
